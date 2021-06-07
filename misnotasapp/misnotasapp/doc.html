@@ -1,0 +1,2170 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+  <!-- Required meta tags -->
+
+  <meta charset="utf-8">
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Guía rápida API misNotasApp</title>
+
+  <meta name="google" content="notranslate" />
+
+  <link rel="shortcut icon" href="https://cdn1.iconfinder.com/data/icons/material-design-icons-light/24/xml-128.png">
+
+  <!-- Bootstrap CSS -->
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css"
+    integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+
+</head>
+
+<body>
+
+
+
+
+
+  <!-- jQuery first, then Tether, then Bootstrap JS. -->
+
+  <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js"
+    integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous">
+  </script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"
+    integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous">
+  </script>
+
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"
+    integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous">
+  </script>
+
+  <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+
+
+
+  <style media="screen">
+    html,
+    body {
+
+      max-width: 100%;
+
+      overflow-x: hidden;
+
+    }
+
+    .footer {
+
+      position: fixed;
+
+      left: 0px;
+
+      bottom: 0px;
+
+      height: 30px;
+
+      width: 100%;
+
+      background: #999;
+
+    }
+
+
+
+    .header img {
+
+      float: left;
+
+      width: 30px;
+
+      margin-top: 10px;
+
+    }
+
+
+
+    .header h1 {
+
+      position: relative;
+
+      top: 18px;
+
+      left: 10px;
+
+    }
+
+    .header {
+
+      margin-left: 100px;
+
+    }
+  </style>
+
+  <div class="header">
+
+    <img src="http://pngriver.com/wp-content/uploads/2017/12/download-Android-Technology-logo-PNG-transparent-images-transparent-backgrounds-PNGRIVER-COM-android_logo_PNG12.png" alt="logo" />
+
+    <h1 class="display-4">Guía rápida API misNotasApp</h1>
+
+  </div>
+
+  <br>
+
+
+
+  <!-- Nav tabs -->
+
+  <ul class="nav nav-tabs" role="tablist">
+
+
+
+    <li class="nav-item">
+
+      <a class="nav-link active" data-toggle="tab" href="#Metodos" role="tab">Métodos</a>
+
+    </li>
+  <!--  <li class="nav-item">
+
+        <a class="nav-link" data-toggle="tab" href="#glosario" role="tab">Variables</a>
+  
+      </li>-->
+
+    <li class="nav-item">
+
+      <a class="nav-link" data-toggle="tab" href="#codeError" role="tab">Códigos Error</a>
+
+    </li>
+
+  </ul>
+
+
+
+  <!-- Tab panes -->
+
+  <div class="tab-content">
+
+
+
+    <div class="tab-pane active" id="Metodos" role="tabpanel">
+
+      <div class="bd-example">
+
+        <div class="row">
+
+          <div class="col-3">
+
+            <!-- Nav tabs -->
+
+            <ul class="nav nav-pills flex-column" role="tablist">
+
+              <li class="nav-item">
+
+                <a class="nav-link active" data-toggle="tab" href="#f1" role="tab">Insertar o Actualizar un usuario</a>
+
+              </li>
+
+              <li class="nav-item">
+
+                <a class="nav-link" data-toggle="tab" href="#f2" role="tab">Eliminar un usuario</a>
+
+              </li>
+
+              <li class="nav-item">
+
+                <a class="nav-link " data-toggle="tab" href="#f3" role="tab">Obtener información usuario</a>
+
+              </li>
+
+              <li class="nav-item">
+
+                <a class="nav-link" data-toggle="tab" href="#f4" role="tab">Listado de usuarios</a>
+
+              </li>
+              <li class="nav-item">
+
+                <a class="nav-link" data-toggle="tab" href="#f5" role="tab">Insertar o Actualizar una nota</a>
+
+              </li>
+
+              <li class="nav-item">
+
+                <a class="nav-link" data-toggle="tab" href="#f6" role="tab">Eliminar una nota</a>
+
+              </li>
+
+              <li class="nav-item">
+
+                <a class="nav-link " data-toggle="tab" href="#f7" role="tab">Obtener información nota</a>
+
+              </li>
+
+              <li class="nav-item">
+
+                <a class="nav-link" data-toggle="tab" href="#f8" role="tab">Listado de notas</a>
+
+              </li>
+              <li class="nav-item">
+
+                <a class="nav-link" data-toggle="tab" href="#f9" role="tab">Listado de notas de un usuario</a>
+
+              </li>
+
+            </ul>
+
+            <hr>
+            <p class="text-justify m-2"> <b>idAcceso</b> : Es el idenficador unico que cada alumno tendra y con el cual tendra acceso a sus datos.<br> El idAcceso es el RUT del alumno sin guión ni digito verificador. </p>
+           
+
+          </div>
+
+          <div class="col-9">
+
+            <!-- Tab panes -->
+
+            <div class="tab-content">
+
+
+              <!--f1-->
+              <div class="tab-pane active" id="f1" role="tabpanel">
+
+                <br>
+
+                <div class="row">
+
+                  <div class="col-sm-2">
+
+                    <h4>URL : </h4>
+
+                  </div>
+
+                  <div class="col-sm-5">
+
+                    <p class="font-italic">http://abascur.cl/android/misnotasapp/InsertOrUpdateUsuario</p>
+
+                  </div>
+
+                </div>
+
+                <div class="row">
+
+                  <div class="col-sm-2">
+
+                    <h4>MétodoHTTP : </h4>
+
+                  </div>
+
+                  <div class="col-sm-1">
+
+                    <p class="font-italic">POST</p>
+
+                  </div>
+
+                </div>
+
+                <div class="row">
+
+                  <div class="col-sm-2">
+
+                    <h4>Descripción: </h4>
+
+                  </div>
+
+                  <div class="col-sm-4">
+
+                    <p class="font-italic">Método para insertar  o actualizar un nuevo usuario</p>
+
+                  </div>
+
+                </div>
+
+                <div class="row">
+
+                  <div class="col-sm-2">
+
+                    <h4>Tipo aplicación: </h4>
+
+                  </div>
+
+                  <div class="col-sm-4">
+
+                    <p class="font-italic">MisNotasApp</p>
+
+                  </div>
+
+                </div>
+
+                <div class="row">
+
+                  <div class="col-sm-5">
+
+                    <div class="card">
+
+                      <div class="card-block">
+
+                        <h3 class="card-title">Ejemplo JSON Consulta</h3>
+
+                        <pre class="prettyprint">
+
+<code >
+
+  {
+    "rutUsuario": "18291683-8",
+    "nombreUsuario": "Antonio Bascur",
+    "contrasenaUsuario": "123456789",
+    "fechaHoraCreacion": "2019-10-02 00:00:00",
+    "idAcceso": "18291683"
+  }
+
+</code>
+
+</pre>
+
+
+
+                      </div>
+
+                    </div>
+
+                  </div>
+
+                  <div class="col-sm-5">
+
+                    <div class="card">
+
+                      <div class="card-block">
+
+                        <h3 class="card-title">Ejemplo JSON Respuesta Éxito</h3>
+
+                        <pre class="prettyprint">
+
+<code >
+
+  {
+
+  "status": "success",
+  "mensaje": "Se inserto De Forma Correcta"
+
+  }
+
+</code>
+
+</pre>
+
+                      </div>
+
+                    </div>
+
+                    <div class="card">
+
+                      <div class="card-block">
+
+                        <h3 class="card-title">Ejemplo JSON Respuesta Error</h3>
+
+                        <pre class="prettyprint">
+
+<code >
+
+  {
+
+    "status": "Error 000",
+    "mensaje": "No se agrego JSON"
+
+  }
+
+
+
+  /*Para más tipos de respuestas de error, ver pestaña "Códigos Error" */
+
+</code>
+
+</pre>
+
+
+
+                      </div>
+
+                    </div>
+
+                  </div>
+
+                </div>
+
+              </div>
+              <!--f2-->
+              <div class="tab-pane" id="f2" role="tabpanel">
+
+                <br>
+
+                <div class="row">
+
+                  <div class="col-sm-2">
+
+                    <h4>URL : </h4>
+
+                  </div>
+
+                  <div class="col-sm-5">
+
+                    <p class="font-italic">http://abascur.cl/android/misnotasapp/DeleteUsuario</p>
+
+                  </div>
+
+                </div>
+
+                <div class="row">
+
+                  <div class="col-sm-2">
+
+                    <h4>MétodoHTTP : </h4>
+
+                  </div>
+
+                  <div class="col-sm-1">
+
+                    <p class="font-italic">POST</p>
+
+                  </div>
+
+                </div>
+
+                <div class="row">
+
+                  <div class="col-sm-2">
+
+                    <h4>Descripción: </h4>
+
+                  </div>
+
+                  <div class="col-sm-4">
+
+                    <p class="font-italic">Método para eliminar un usuario </p>
+
+                  </div>
+
+                </div>
+
+                <div class="row">
+
+                  <div class="col-sm-2">
+
+                    <h4>Tipo aplicación: </h4>
+
+                  </div>
+
+                  <div class="col-sm-4">
+
+                    <p class="font-italic">MisNotasApp</p>
+
+                  </div>
+
+                </div>
+
+                <div class="row">
+
+                  <div class="col-sm-5">
+
+                    <div class="card">
+
+                      <div class="card-block">
+
+                        <h3 class="card-title">Ejemplo JSON Consulta</h3>
+
+                        <pre class="prettyprint">
+
+<code >
+
+  {
+    "rutUsuario": "18291683-8",
+    "idAcceso": "18291683"
+  }
+
+</code>
+
+</pre>
+
+
+
+                      </div>
+
+                    </div>
+
+                  </div>
+
+                  <div class="col-sm-5">
+
+                    <div class="card">
+
+                      <div class="card-block">
+
+                        <h3 class="card-title">Ejemplo JSON Respuesta Éxito</h3>
+
+                        <pre class="prettyprint">
+
+<code >
+  {
+    "status": "success",
+    "mensaje": true
+  }
+
+</code>
+
+</pre>
+
+                      </div>
+
+                    </div>
+
+                    <div class="card">
+
+                      <div class="card-block">
+
+                        <h3 class="card-title">Ejemplo JSON Respuesta Error</h3>
+
+                        <pre class="prettyprint">
+
+<code >
+
+  {
+
+    "status": "Error 000",
+    "mensaje": "No se agrego JSON"
+
+  }
+
+
+
+  /*Para más tipos de respuestas de error, ver pestaña "Códigos Error" */
+
+</code>
+
+</pre>
+
+
+
+                      </div>
+
+                    </div>
+
+                  </div>
+
+                </div>
+
+              </div>
+              <!--f3-->
+              <div class="tab-pane" id="f3" role="tabpanel">
+
+                <br>
+
+                <div class="row">
+
+                  <div class="col-sm-2">
+
+                    <h4>URL : </h4>
+
+                  </div>
+
+                  <div class="col-sm-5">
+
+                    <p class="font-italic">http://abascur.cl/android/misnotasapp/GetUsuario</p>
+
+                  </div>
+
+                </div>
+
+                <div class="row">
+
+                  <div class="col-sm-2">
+
+                    <h4>MétodoHTTP : </h4>
+
+                  </div>
+
+                  <div class="col-sm-1">
+
+                    <p class="font-italic">POST</p>
+
+                  </div>
+
+                </div>
+
+                <div class="row">
+
+                  <div class="col-sm-2">
+
+                    <h4>Descripción: </h4>
+
+                  </div>
+
+                  <div class="col-sm-4">
+
+                    <p class="font-italic">Método para obtener información de un usuario</p>
+
+                  </div>
+
+                </div>
+
+                <div class="row">
+
+                  <div class="col-sm-2">
+
+                    <h4>Tipo aplicación: </h4>
+
+                  </div>
+
+                  <div class="col-sm-4">
+
+                    <p class="font-italic">MisNotasApp</p>
+
+                  </div>
+
+                </div>
+
+                <div class="row">
+
+                  <div class="col-sm-5">
+
+                    <div class="card">
+
+                      <div class="card-block">
+
+                        <h3 class="card-title">Ejemplo JSON Consulta</h3>
+
+                        <pre class="prettyprint">
+
+  <code >
+  
+    {
+      "rutUsuario": "18291683-8",
+      "idAcceso": "18291683"
+    }
+  
+  </code>
+  
+  </pre>
+
+
+
+                      </div>
+
+                    </div>
+
+                  </div>
+
+                  <div class="col-sm-5">
+
+                    <div class="card">
+
+                      <div class="card-block">
+
+                        <h3 class="card-title">Ejemplo JSON Respuesta Éxito</h3>
+
+                        <pre class="prettyprint">
+
+  <code >
+  
+    {
+      "status": "success",
+      "mensaje": {
+        "rutUsuario": "18291683-8",
+        "nombreUsuario": "Antonio Bascur",
+        "contrasenaUsuario": "123456789",
+        "fechaHoraCreacion": "2019-10-02 00:00:00",
+        "fechaHoraUpdate": "2019-10-02 14:24:20",
+        "fechaHoraInsert": "2019-10-02 13:37:20",
+        "idAcceso": 18291683
+      }
+    }
+  
+  </code>
+  
+  </pre>
+
+                      </div>
+
+                    </div>
+
+                    <div class="card">
+
+                      <div class="card-block">
+
+                        <h3 class="card-title">Ejemplo JSON Respuesta Error</h3>
+
+                        <pre class="prettyprint">
+
+  <code >
+  
+    {
+  
+      "status": "Error 000",
+      "mensaje": "No se agrego JSON"
+  
+    }
+  
+  
+  
+    /*Para más tipos de respuestas de error, ver pestaña "Códigos Error" */
+  
+  </code>
+  
+  </pre>
+
+
+
+                      </div>
+
+                    </div>
+
+                  </div>
+
+                </div>
+
+              </div>
+              <!--f4-->
+              <div class="tab-pane" id="f4" role="tabpanel">
+
+                <br>
+
+                <div class="row">
+
+                  <div class="col-sm-2">
+
+                    <h4>URL : </h4>
+
+                  </div>
+
+                  <div class="col-sm-5">
+
+                    <p class="font-italic">http://abascur.cl/android/misnotasapp/GetAllUsuarios/18291683</p>
+
+                  </div>
+
+                </div>
+
+                <div class="row">
+
+                  <div class="col-sm-2">
+
+                    <h4>MétodoHTTP : </h4>
+
+                  </div>
+
+                  <div class="col-sm-1">
+
+                    <p class="font-italic">GET</p>
+
+                  </div>
+
+                </div>
+
+                <div class="row">
+
+                  <div class="col-sm-2">
+
+                    <h4>Descripción: </h4>
+
+                  </div>
+
+                  <div class="col-sm-4">
+
+                    <p class="font-italic">Método para obtener el listado de usuarios</p>
+
+                  </div>
+
+                </div>
+
+                <div class="row">
+
+                  <div class="col-sm-2">
+
+                    <h4>Tipo aplicación: </h4>
+
+                  </div>
+
+                  <div class="col-sm-4">
+
+                    <p class="font-italic">MisNotasApp</p>
+
+                  </div>
+
+                </div>
+
+                <div class="row">
+
+                  <div class="col-sm-5">
+
+                    <div class="card">
+
+                      <div class="card-block">
+
+                        <h3 class="card-title">Ejemplo JSON Consulta</h3>
+
+                        <pre class="prettyprint">
+
+<code >
+
+  /*Se debe agregar como parametro el idAcceso en la URL de la API.*/ 
+  /*en este ejemplo el idAcceso es el rut sin digito verificador*/
+  http://abascur.cl/android/misnotasapp/GetAllUsuarios/18291683
+
+</code>
+
+</pre>
+
+
+
+                      </div>
+
+                    </div>
+
+                  </div>
+
+                  <div class="col-sm-5">
+
+                    <div class="card">
+
+                      <div class="card-block">
+
+                        <h3 class="card-title">Ejemplo JSON Respuesta Éxito</h3>
+
+                        <pre class="prettyprint">
+
+<code >
+
+  {
+    "status": "success",
+    "mensaje": [
+      {
+        "rutUsuario": "18291683-8",
+        "nombreUsuario": "Antonio Bascur",
+        "contrasenaUsuario": "1234",
+        "fechaHoraCreacion": "2019-10-02 00:00:00",
+        "fechaHoraUpdate": "2019-10-02 13:57:42",
+        "fechaHoraInsert": "2019-10-02 13:37:20",
+        "idAcceso": 18291683
+      },
+      {
+        "rutUsuario": "182916838",
+        "nombreUsuario": "Antonio Bascur",
+        "contrasenaUsuario": "1234",
+        "fechaHoraCreacion": "2019-10-02 00:00:00",
+        "fechaHoraUpdate": "0000-00-00 00:00:00",
+        "fechaHoraInsert": "2019-10-02 13:37:52",
+        "idAcceso": 18291683
+      }
+    ]
+  }
+
+</code>
+
+</pre>
+
+                      </div>
+
+                    </div>
+
+                    <div class="card">
+
+                      <div class="card-block">
+
+                        <h3 class="card-title">Ejemplo JSON Respuesta Error</h3>
+
+                        <pre class="prettyprint">
+
+<code >
+
+  {
+
+    "status": "Error 000",
+    "mensaje": "No se agrego JSON"
+
+  }
+
+
+
+  /*Para más tipos de respuestas de error, ver pestaña "Códigos Error" */
+
+</code>
+
+</pre>
+
+
+
+                      </div>
+
+                    </div>
+
+                  </div>
+
+                </div>
+
+              </div>
+              <!--f5-->
+              <div class="tab-pane" id="f5" role="tabpanel">
+
+                <br>
+
+                <div class="row">
+
+                  <div class="col-sm-2">
+
+                    <h4>URL : </h4>
+
+                  </div>
+
+                  <div class="col-sm-5">
+
+                    <p class="font-italic">http://abascur.cl/android/misnotasapp/InsertOrUpdateNota</p>
+
+                  </div>
+
+                </div>
+
+                <div class="row">
+
+                  <div class="col-sm-2">
+
+                    <h4>MétodoHTTP : </h4>
+
+                  </div>
+
+                  <div class="col-sm-1">
+
+                    <p class="font-italic">POST</p>
+
+                  </div>
+
+                </div>
+
+                <div class="row">
+
+                  <div class="col-sm-2">
+
+                    <h4>Descripción: </h4>
+
+                  </div>
+
+                  <div class="col-sm-4">
+
+                    <p class="font-italic">Método para insertar o actualizar una nota</p>
+
+                  </div>
+
+                </div>
+
+                <div class="row">
+
+                  <div class="col-sm-2">
+
+                    <h4>Tipo aplicación: </h4>
+
+                  </div>
+
+                  <div class="col-sm-4">
+
+                    <p class="font-italic">MisNotasApp</p>
+
+                  </div>
+
+                </div>
+
+                <div class="row">
+
+                  <div class="col-sm-5">
+
+                    <div class="card">
+
+                      <div class="card-block">
+
+                        <h3 class="card-title">Ejemplo JSON Consulta</h3>
+
+                        <pre class="prettyprint">
+
+  <code >
+  
+    {
+      "rutUsuario": "18291683-8",
+      "idNota": "3",
+      "nombreNota": "Compras",
+      "descripcionNota": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+      "fechaHoraCreacion": "2019-10-02 00:00:00",
+      "idAcceso": "18291683"
+			
+    }
+  
+  </code>
+  
+  </pre>
+
+
+
+                      </div>
+
+                    </div>
+
+                  </div>
+
+                  <div class="col-sm-5">
+
+                    <div class="card">
+
+                      <div class="card-block">
+
+                        <h3 class="card-title">Ejemplo JSON Respuesta Éxito</h3>
+
+                        <pre class="prettyprint">
+
+  <code >
+  
+    {
+  
+    "status": "success",
+    "mensaje": "Se inserto De Forma Correcta"
+  
+    }
+  
+  </code>
+  
+  </pre>
+
+                      </div>
+
+                    </div>
+
+                    <div class="card">
+
+                      <div class="card-block">
+
+                        <h3 class="card-title">Ejemplo JSON Respuesta Error</h3>
+
+                        <pre class="prettyprint">
+
+  <code >
+  
+    {
+  
+      "status": "Error 000",
+      "mensaje": "No se agrego JSON"
+  
+    }
+  
+  
+  
+    /*Para más tipos de respuestas de error, ver pestaña "Códigos Error" */
+  
+  </code>
+  
+  </pre>
+
+
+
+                      </div>
+
+                    </div>
+
+                  </div>
+
+                </div>
+
+              </div>
+              <!--f6-->
+              <div class="tab-pane" id="f6" role="tabpanel">
+
+                <br>
+
+                <div class="row">
+
+                  <div class="col-sm-2">
+
+                    <h4>URL : </h4>
+
+                  </div>
+
+                  <div class="col-sm-5">
+
+                    <p class="font-italic">http://abascur.cl/android/misnotasapp/DeleteNota</p>
+
+                  </div>
+
+                </div>
+
+                <div class="row">
+
+                  <div class="col-sm-2">
+
+                    <h4>MétodoHTTP : </h4>
+
+                  </div>
+
+                  <div class="col-sm-1">
+
+                    <p class="font-italic">POST</p>
+
+                  </div>
+
+                </div>
+
+                <div class="row">
+
+                  <div class="col-sm-2">
+
+                    <h4>Descripción: </h4>
+
+                  </div>
+
+                  <div class="col-sm-4">
+
+                    <p class="font-italic">Método para eliminar una nota</p>
+
+                  </div>
+
+                </div>
+
+                <div class="row">
+
+                  <div class="col-sm-2">
+
+                    <h4>Tipo aplicación: </h4>
+
+                  </div>
+
+                  <div class="col-sm-4">
+
+                    <p class="font-italic">MisNotasApp</p>
+
+                  </div>
+
+                </div>
+
+                <div class="row">
+
+                  <div class="col-sm-5">
+
+                    <div class="card">
+
+                      <div class="card-block">
+
+                        <h3 class="card-title">Ejemplo JSON Consulta</h3>
+
+                        <pre class="prettyprint">
+
+<code >
+
+  {
+    "idNota": "2",
+    "rutUsuario": "18291683-8",
+    "idAcceso": "18291683"
+  }
+
+</code>
+
+</pre>
+
+
+
+                      </div>
+
+                    </div>
+
+                  </div>
+
+                  <div class="col-sm-5">
+
+                    <div class="card">
+
+                      <div class="card-block">
+
+                        <h3 class="card-title">Ejemplo JSON Respuesta Éxito</h3>
+
+                        <pre class="prettyprint">
+
+<code >
+
+  {
+    "status": "success",
+    "mensaje": true
+  }
+
+</code>
+
+</pre>
+
+                      </div>
+
+                    </div>
+
+                    <div class="card">
+
+                      <div class="card-block">
+
+                        <h3 class="card-title">Ejemplo JSON Respuesta Error</h3>
+
+                        <pre class="prettyprint">
+
+<code >
+
+  {
+
+    "status": "Error 000",
+    "mensaje": "No se agrego JSON"
+
+  }
+
+
+
+  /*Para más tipos de respuestas de error, ver pestaña "Códigos Error" */
+
+</code>
+
+</pre>
+
+
+
+                      </div>
+
+                    </div>
+
+                  </div>
+
+                </div>
+
+              </div>
+              <!--f7-->
+              <div class="tab-pane" id="f7" role="tabpanel">
+
+                <br>
+
+                <div class="row">
+
+                  <div class="col-sm-2">
+
+                    <h4>URL : </h4>
+
+                  </div>
+
+                  <div class="col-sm-5">
+
+                    <p class="font-italic">http://abascur.cl/android/misnotasapp/GetNota</p>
+
+                  </div>
+
+                </div>
+
+                <div class="row">
+
+                  <div class="col-sm-2">
+
+                    <h4>MétodoHTTP : </h4>
+
+                  </div>
+
+                  <div class="col-sm-1">
+
+                    <p class="font-italic">POST</p>
+
+                  </div>
+
+                </div>
+
+                <div class="row">
+
+                  <div class="col-sm-2">
+
+                    <h4>Descripción: </h4>
+
+                  </div>
+
+                  <div class="col-sm-4">
+
+                    <p class="font-italic">Método para obtener información de una nota</p>
+
+                  </div>
+
+                </div>
+
+                <div class="row">
+
+                  <div class="col-sm-2">
+
+                    <h4>Tipo aplicación: </h4>
+
+                  </div>
+
+                  <div class="col-sm-4">
+
+                    <p class="font-italic">MisNotasApp</p>
+
+                  </div>
+
+                </div>
+
+                <div class="row">
+
+                  <div class="col-sm-5">
+
+                    <div class="card">
+
+                      <div class="card-block">
+
+                        <h3 class="card-title">Ejemplo JSON Consulta</h3>
+
+                        <pre class="prettyprint">
+
+  <code >
+    {
+      "idNota": "3",
+      "rutUsuario": "18291683-8",
+      "idAcceso": "18291683"
+  }
+  </code>
+  
+  </pre>
+
+
+
+                      </div>
+
+                    </div>
+
+                  </div>
+
+                  <div class="col-sm-5">
+
+                    <div class="card">
+
+                      <div class="card-block">
+
+                        <h3 class="card-title">Ejemplo JSON Respuesta Éxito</h3>
+
+                        <pre class="prettyprint">
+
+  <code >
+  
+    {
+      "status": "success",
+      "mensaje": {
+        "idNota": 1,
+        "nombreNota": "Compras",
+        "descripcionNota": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+        "fechaHoraCreacion": "2019-10-02 00:00:00",
+        "fechaHoraUpdate": "0000-00-00 00:00:00",
+        "fechaHoraInsert": "2019-10-03 01:29:31",
+        "idAcceso": 18291683,
+        "rutUsuario": "18291683-8"
+      }
+    }
+  
+  </code>
+  
+  </pre>
+
+                      </div>
+
+                    </div>
+
+                    <div class="card">
+
+                      <div class="card-block">
+
+                        <h3 class="card-title">Ejemplo JSON Respuesta Error</h3>
+
+                        <pre class="prettyprint">
+
+  <code >
+  
+    {
+  
+      "status": "Error 000",
+      "mensaje": "No se agrego JSON"
+  
+    }
+  
+  
+  
+    /*Para más tipos de respuestas de error, ver pestaña "Códigos Error" */
+  
+  </code>
+  
+  </pre>
+
+
+
+                      </div>
+
+                    </div>
+
+                  </div>
+
+                </div>
+
+              </div>
+              <!--f8-->
+              <div class="tab-pane" id="f8" role="tabpanel">
+
+                <br>
+
+                <div class="row">
+
+                  <div class="col-sm-2">
+
+                    <h4>URL : </h4>
+
+                  </div>
+
+                  <div class="col-sm-3">
+
+                    <p class="font-italic">http://abascur.cl/android/misnotasapp/GetAllNotas/18291683</p>
+
+                  </div>
+
+                </div>
+
+                <div class="row">
+
+                  <div class="col-sm-2">
+
+                    <h4>MétodoHTTP : </h4>
+
+                  </div>
+
+                  <div class="col-sm-1">
+
+                    <p class="font-italic">GET</p>
+
+                  </div>
+
+                </div>
+
+                <div class="row">
+
+                  <div class="col-sm-2">
+
+                    <h4>Descripción: </h4>
+
+                  </div>
+
+                  <div class="col-sm-4">
+
+                    <p class="font-italic">Método para obtener el listado de notas</p>
+
+                  </div>
+
+                </div>
+
+                <div class="row">
+
+                  <div class="col-sm-2">
+
+                    <h4>Tipo aplicación: </h4>
+
+                  </div>
+
+                  <div class="col-sm-4">
+
+                    <p class="font-italic">MisNotasApp</p>
+
+                  </div>
+
+                </div>
+
+                <div class="row">
+
+                  <div class="col-sm-5">
+
+                    <div class="card">
+
+                      <div class="card-block">
+
+                        <h3 class="card-title">Ejemplo JSON Consulta</h3>
+
+                        <pre class="prettyprint">
+
+<code >
+  /*Se debe agregar como parametro el idAcceso en la URL de la API.*/ 
+  /*en este ejemplo el idAcceso es el rut sin digito verificador*/
+  http://abascur.cl/android/misnotasapp/GetAllNotas/18291683
+
+</code>
+
+</pre>
+
+
+
+                      </div>
+
+                    </div>
+
+                  </div>
+
+                  <div class="col-sm-5">
+
+                    <div class="card">
+
+                      <div class="card-block">
+
+                        <h3 class="card-title">Ejemplo JSON Respuesta Éxito</h3>
+
+                        <pre class="prettyprint">
+
+<code >
+
+  {
+    "status": "success",
+    "mensaje": [
+      {
+        "idNota": 1,
+        "nombreNota": "Compras",
+        "descripcionNota": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+        "fechaHoraCreacion": "2019-10-02 00:00:00",
+        "fechaHoraUpdate": "0000-00-00 00:00:00",
+        "fechaHoraInsert": "2019-10-02 15:32:10",
+        "idAcceso": 18291683,
+        "rutUsuario": "18291683-8"
+      },
+      {
+        "idNota": 2,
+        "nombreNota": "Compras",
+        "descripcionNota": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+        "fechaHoraCreacion": "2019-10-02 00:00:00",
+        "fechaHoraUpdate": "2019-10-02 14:25:22",
+        "fechaHoraInsert": "2019-10-02 14:02:35",
+        "idAcceso": 18291683,
+        "rutUsuario": "18291683-8"
+      }
+    ]
+  }
+
+</code>
+
+</pre>
+
+                      </div>
+
+                    </div>
+
+                    <div class="card">
+
+                      <div class="card-block">
+
+                        <h3 class="card-title">Ejemplo JSON Respuesta Error</h3>
+
+                        <pre class="prettyprint">
+
+<code >
+
+{
+
+"status": "Error 000",
+"mensaje": "No se agrego JSON"
+
+}
+
+
+
+/*Para más tipos de respuestas de error, ver pestaña "Códigos Error" */
+
+</code>
+
+</pre>
+
+
+
+                      </div>
+
+                    </div>
+
+                  </div>
+
+                </div>
+
+              </div>
+               <!--f9-->
+               <div class="tab-pane" id="f9" role="tabpanel">
+
+                <br>
+
+                <div class="row">
+
+                  <div class="col-sm-2">
+
+                    <h4>URL : </h4>
+
+                  </div>
+
+                  <div class="col-sm-3">
+
+                    <p class="font-italic">http://abascur.cl/android/misnotasapp/GetAllNotasUsuario</p>
+
+                  </div>
+
+                </div>
+
+                <div class="row">
+
+                  <div class="col-sm-2">
+
+                    <h4>MétodoHTTP : </h4>
+
+                  </div>
+
+                  <div class="col-sm-1">
+
+                    <p class="font-italic">POST</p>
+
+                  </div>
+
+                </div>
+
+                <div class="row">
+
+                  <div class="col-sm-2">
+
+                    <h4>Descripción: </h4>
+
+                  </div>
+
+                  <div class="col-sm-4">
+
+                    <p class="font-italic">Método para obtener el listado de notas de un usuario</p>
+
+                  </div>
+
+                </div>
+
+                <div class="row">
+
+                  <div class="col-sm-2">
+
+                    <h4>Tipo aplicación: </h4>
+
+                  </div>
+
+                  <div class="col-sm-4">
+
+                    <p class="font-italic">MisNotasApp</p>
+
+                  </div>
+
+                </div>
+
+                <div class="row">
+
+                  <div class="col-sm-5">
+
+                    <div class="card">
+
+                      <div class="card-block">
+
+                        <h3 class="card-title">Ejemplo JSON Consulta</h3>
+
+                        <pre class="prettyprint">
+
+<code >
+  {
+    "rutUsuario": "18291683-8",
+    "idAcceso": "18291683"
+  }
+</code>
+
+</pre>
+
+
+
+                      </div>
+
+                    </div>
+
+                  </div>
+
+                  <div class="col-sm-5">
+
+                    <div class="card">
+
+                      <div class="card-block">
+
+                        <h3 class="card-title">Ejemplo JSON Respuesta Éxito</h3>
+
+                        <pre class="prettyprint">
+
+<code >
+
+  {
+    "status": "success",
+    "mensaje": [
+      {
+        "idNota": 1,
+        "nombreNota": "Compras",
+        "descripcionNota": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+        "fechaHoraCreacion": "2019-10-02 00:00:00",
+        "fechaHoraUpdate": "0000-00-00 00:00:00",
+        "fechaHoraInsert": "2019-10-03 01:29:31",
+        "idAcceso": 18291683,
+        "rutUsuario": "18291683-8"
+      },
+      {
+        "idNota": 2,
+        "nombreNota": "Compras",
+        "descripcionNota": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+        "fechaHoraCreacion": "2019-10-02 00:00:00",
+        "fechaHoraUpdate": "0000-00-00 00:00:00",
+        "fechaHoraInsert": "2019-10-03 01:32:26",
+        "idAcceso": 18291683,
+        "rutUsuario": "18291683-8"
+      }
+    ]
+  }
+
+</code>
+
+</pre>
+
+                      </div>
+
+                    </div>
+
+                    <div class="card">
+
+                      <div class="card-block">
+
+                        <h3 class="card-title">Ejemplo JSON Respuesta Error</h3>
+
+                        <pre class="prettyprint">
+
+<code >
+
+{
+
+"status": "Error 000",
+"mensaje": "No se agrego JSON"
+
+}
+
+
+
+/*Para más tipos de respuestas de error, ver pestaña "Códigos Error" */
+
+</code>
+
+</pre>
+
+
+
+                      </div>
+
+                    </div>
+
+                  </div>
+
+                </div>
+
+              </div>
+
+            </div>
+
+
+
+          </div>
+
+
+
+        </div>
+
+      </div>
+
+    </div>
+    <!--<div class="tab-pane " id="glosario" role="tabpanel">
+        <table BORDER WIDTH="50%" class="table table-striped table-hover">
+        <thead class="thead-inverse">
+
+            <tr ALIGN=center class="bg-info">
+  
+              <th>Variable</th>
+              <th>Descripción</th>
+  
+            </tr>
+  
+          </thead>
+  
+          <tbody>
+  
+            <tr ALIGN=center>
+  
+              <td>idAcceso</td>  
+              <td>Codigo de acceso cada alumno almacenara </td>
+  
+            </tr>
+            </tbody>
+            </table>
+
+
+
+    </div>-->
+
+
+
+
+    <div class="tab-pane " id="codeError" role="tabpanel">
+
+
+
+      <table BORDER WIDTH="50%" class="table table-striped table-hover">
+
+        <thead class="thead-inverse">
+
+          <tr ALIGN=center>
+
+            <th>Etiqueta</th>
+
+            <th>Código o Status</th>
+
+            <th>Mensaje</th>
+
+          </tr>
+
+        </thead>
+
+        <tbody>
+
+          <tr ALIGN=center>
+
+            <td>JSON</td>
+
+            <td>Error000</td>
+
+            <td>No se agregó JSON</td>
+
+          </tr>
+
+
+
+
+
+          <tr ALIGN=center>
+
+            <td>rutUsuario</td>
+
+            <td>Error001</td>
+
+            <td>No se agrego la etiqueta rutUsuario</td>
+
+          </tr>
+
+          <tr ALIGN=center>
+
+            <td>rutUsuario</td>
+
+            <td>Error002</td>
+
+            <td>La etiqueta rutUsuario esta vacia</td>
+
+          </tr>
+
+
+
+          <tr ALIGN=center>
+
+            <td>rutUsuario</td>
+
+            <td>Error003</td>
+
+            <td>El rutUsuario Ingresado no es Valido</td>
+
+          </tr>
+
+          <tr ALIGN=center>
+
+            <td>nombreUsuario</td>
+
+            <td>Error004</td>
+
+            <td>No se agrego la etiqueta nombreUsuario</td>
+
+          </tr>
+
+          <tr ALIGN=center>
+
+            <td>nombreUsuario</td>
+
+            <td>Error005</td>
+
+            <td>La etiqueta nombreUsuario esta vacia</td>
+
+          </tr>
+
+
+
+          <tr ALIGN=center>
+
+            <td>nombreUsuario</td>
+
+            <td>Error006</td>
+
+            <td>nombreUsuario debe ser de largo menor a 100 caracteres</td>
+
+          </tr>
+
+          <tr ALIGN=center>
+
+            <td>contrasenaUsuario</td>
+
+            <td>Error007</td>
+
+            <td>No se agrego la etiqueta contrasenaUsuario</td>
+
+          </tr>
+
+
+
+          <tr ALIGN=center>
+
+            <td>contrasenaUsuario</td>
+
+            <td>Error008</td>
+
+            <td>La etiqueta contrasenaUsuario esta vacia</td>
+
+          </tr>
+
+          <tr ALIGN=center>
+
+            <td>contrasenaUsuario</td>
+
+            <td>Error009</td>
+
+            <td>contrasenaUsuario debe ser de largo menor a 10 caracteres</td>
+
+          </tr>
+
+
+
+          <tr ALIGN=center>
+
+            <td>fechaHoraCreacion</td>
+
+            <td>Error010</td>
+
+            <td>No se agrego la etiqueta fechaHoraCreacion</td>
+
+          </tr>
+
+          <tr ALIGN=center>
+
+            <td>fechaHoraCreacion</td>
+
+            <td>Error011</td>
+
+            <td>La etiqueta fechaHoraCreacion esta vacia</td>
+
+          </tr>
+
+
+
+          <tr ALIGN=center>
+
+            <td>idAcceso</td>
+
+            <td>Error012</td>
+
+            <td>No se agregó la etiqueta idAcceso</td>
+
+          </tr>
+
+          <tr ALIGN=center>
+
+            <td>idAcceso</td>
+
+            <td>Error013</td>
+
+            <td>La etiqueta idAcceso esta vacía</td>
+
+          </tr>
+
+
+
+          <tr ALIGN=center>
+
+            <td>idAcceso</td>
+
+            <td>Error014</td>
+
+            <td>La etiqueta idAcceso debe tomar valor numerico</td>
+
+          </tr>
+
+          <tr ALIGN=center>
+
+            <td>idNota</td>
+
+            <td>Error015</td>
+
+            <td>No se agrego la etiqueta idNota</td>
+
+          </tr>
+
+
+
+          <tr ALIGN=center>
+
+            <td>idNota</td>
+
+            <td>Error016</td>
+
+            <td>La etiqueta idNota esta vacia</td>
+
+          </tr>
+
+          <tr ALIGN=center>
+
+            <td>idNota</td>
+
+            <td>Error017</td>
+
+            <td>La etiqueta idNota debe tomar valor numerico</td>
+
+          </tr>
+
+
+
+          <tr ALIGN=center>
+
+            <td>nombreNota</td>
+
+            <td>Error018</td>
+
+            <td>No se agrego la etiqueta nombreNota</td>
+
+          </tr>
+
+          <tr ALIGN=center>
+
+            <td>nombreNota</td>
+
+            <td>Error019</td>
+
+            <td>La etiqueta nombreNota esta vacia</td>
+
+          </tr>
+
+
+
+          <tr ALIGN=center>
+
+            <td>nombreNota</td>
+
+            <td>Error020</td>
+
+            <td>nombreNota debe ser de largo menor a 150 caracteres </td>
+
+          </tr>
+
+          <tr ALIGN=center>
+
+            <td>descripcionNota</td>
+
+            <td>Error021</td>
+
+            <td>No se agrego la etiqueta descripcionNota</td>
+
+          </tr>
+
+
+
+          <tr ALIGN=center>
+
+            <td>descripcionNota</td>
+
+            <td>Error022</td>
+
+            <td>La etiqueta descripcionNota esta vacia</td>
+
+          </tr>
+
+          <tr ALIGN=center>
+
+            <td>descripcionNota</td>
+
+            <td>Error023</td>
+
+            <td>descripcionNota debe ser de largo menor a 500 caracteres </td>
+
+          </tr>
+
+
+
+          <tr ALIGN=center>
+
+            <td>id</td>
+
+            <td>Error024</td>
+
+            <td>La etiqueta id esta vacia</td>
+
+          </tr>
+
+          <tr ALIGN=center>
+
+            <td>id</td>
+
+            <td>Error025</td>
+
+            <td>La etiqueta id debe tomar valor numerico</td>
+
+          </tr>
+
+
+
+          <tr ALIGN=center>
+
+            <td>Error Mysql</td>
+
+            <td>Error999</td>
+
+            <td>Error MySql</td>
+
+          </tr>
+
+          <tr ALIGN=center>
+
+              <td>Error Mysql</td>
+
+
+            <td>Error00</td>
+
+            <td>Error Mysql</td>
+
+
+          </tr>
+
+
+
+
+
+
+        </tbody>
+
+      </table>
+
+    </div>
+
+  </div>
+
+
+
+</body>
+
+<footer class="footer">
+
+  <div class="container">
+
+    <span class="text-muted">Desarrollado por Antonio Bascur Q.</span>
+
+  </div>
+
+</footer>
+
+</html>
